@@ -226,23 +226,25 @@ h2:after {
 }
 
 .parallax {
-  /* The image used */
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.5),
       rgba(255, 1, 1, 0.65)
     ),
     url('../img/portfolio.jpg') fixed no-repeat center center / cover;
-  /* background-image: url('../img/portfolio.jpg'); */
-
-  /* Set a specific height */
   height: 500px;
+  position: relative;
+}
 
-  /* Create the parallax scrolling effect */
-  /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
+.parallax .innerDiv {
+  position: absolute;
+  width: 284px;
+  height: 290px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -147px;
+  margin-left: -144px;
 }
 
 .parallax-text {
