@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Photos -->
 <section id="category-photos" class="py-5">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h2 class="py-5">{{category.name}}</h2>
-                <p class="text-center">{{subcategory.description}}</p>
-                <p class="text-left"><a class="btn btn-red" href="{% url 'categories' %}" role="button">Back To Portfolio &raquo;</a></p>
-            </div>
-        </div>
-        <div class="row text-center mt-5">
-            {% if photos %}
-                {% for photo in photos %}
-                    {% if photo.is_published %}
-                        <div class="col-md-4 mb-3">
-                            <div class="text-container">
-                                <a href="{{photo.photo_main.url}}" data-lightbox="category-photos" data-title="{{photo.title}}">
-                                    <img src="{{photo.photo_main.url}}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-                <div class="col-md-12">
-                    <p>No Photos Available</p>
-                </div>
-            {% endif %}
-        </div>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h2 class="py-5">{{ subcategory.name }}</h2>
+        <p class="text-center">{{ subcategory.description }}</p>
+        <p class="text-left">
+          <a class="btn btn-red" href="{% url 'categories' %}" role="button"
+            >Back To Portfolio &raquo;</a
+          >
+        </p>
+      </div>
     </div>
+    <div class="row text-center mt-5">
+      {% if photos %} {% for photo in photos %} {% if photo.is_published %}
+      <div class="col-md-4 mb-3">
+        <div class="text-container">
+          <a
+            href="{{ photo.photo_main.url }}"
+            data-lightbox="category-photos"
+            data-title="{{ photo.title }}"
+          >
+            <img src="{{ photo.photo_main.url }}" alt="" class="img-fluid" />
+          </a>
+        </div>
+      </div>
+      {% endif %} {% endfor %} {% else %}
+      <div class="col-md-12">
+        <p>No Photos Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
 </section>
 {% endblock %}
