@@ -233,18 +233,6 @@ h2:after {
     ),
     url('../img/portfolio.jpg') fixed no-repeat center center / cover;
   height: 500px;
-  position: relative;
-}
-
-.parallax .innerDiv {
-  position: absolute;
-  width: 284px;
-  height: 290px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -147px;
-  margin-left: -144px;
 }
 
 .parallax-text {
