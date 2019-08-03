@@ -6,7 +6,7 @@ class ContactForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), 
                             validators=[validators.EmailValidator()])
-    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'label':'About you: what are your event and budget?'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'title':'About you: what are your event and budget?'}))
     contact_date = forms.DateTimeField(required=False, widget=forms.HiddenInput())
     class Meta():
         model = Contact
