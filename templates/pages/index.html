@@ -102,19 +102,19 @@
         </div>
       </div>
       <div class="row text-center">
-        {% if subcategories %} {% for subcategory in subcategories %}
+        {% if photos %} {% for photo in photos %}
         <div class="col-md-4 mb-3">
           <div class="text-container">
             <img
-              src="{{ subcategory.subcategory_photo.url }}"
+              src="{{ photo.photo_main.url }}"
               alt=""
               class="mb-3 img-fluid homepage-img"
             />
             <div class="centered">
               <h5>
                 <a
-                  href="portfolio/{{ subcategory.category.slug }}/{{ subcategory.slug }}"
-                  >{{ subcategory.name }}</a
+                  href="#"
+                  >{{ photo.title }}</a
                 >
               </h5>
             </div>
@@ -122,7 +122,7 @@
         </div>
         {% endfor %} {% else %}
         <div class="col-md-12">
-          <p>No Categories Available</p>
+          <p>No Photos Available</p>
         </div>
         {% endif %}
       </div>
