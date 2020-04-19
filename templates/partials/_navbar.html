@@ -62,6 +62,22 @@
               <a class="nav-link" href="{% url 'index' %}">Home</a>
           </li>
           <li 
+            {% if 'portfolio' in request.path %} 
+              class="nav-item active mr-3" 
+            {% else %} 
+              class="nav-item mr-3"
+            {% endif %}>
+            <a class="nav-link" href="{% url 'categories' %}">Portfolio</a>
+          </li>
+          <li 
+            {% if 'services' in request.path %} 
+              class="nav-item active mr-3" 
+            {% else %} 
+              class="nav-item mr-3"
+            {% endif %}>
+            <a class="nav-link" href="{% url 'services' %}">Services</a>
+          </li>
+          <li 
             {% if 'about' in request.path %} 
               class="nav-item active mr-3" 
             {% else %} 
@@ -82,22 +98,6 @@
             {% endfor %}
             </div>
           </li> -->
-          <li 
-            {% if 'services' in request.path %} 
-              class="nav-item active mr-3" 
-            {% else %} 
-              class="nav-item mr-3"
-            {% endif %}>
-            <a class="nav-link" href="{% url 'services' %}">Services</a>
-          </li>
-          <li 
-            {% if 'portfolio' in request.path %} 
-              class="nav-item active mr-3" 
-            {% else %} 
-              class="nav-item mr-3"
-            {% endif %}>
-            <a class="nav-link" href="{% url 'categories' %}">Portfolio</a>
-          </li>
           <li 
           {% if 'blog' in request.path %} 
             class="nav-item active mr-3" 
