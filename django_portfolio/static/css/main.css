@@ -241,6 +241,10 @@ h2:after {
   text-align: center;
 }
 
+.portfolio-wrapper {
+  margin: 0 auto;
+}
+
 @media only screen and (min-width: 768px) {
   .service {
     margin: 3rem 0;

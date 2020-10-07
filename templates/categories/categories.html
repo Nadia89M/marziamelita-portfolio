@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Photos -->
 <section id="photos" class="py-5">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h2 class="py-5">Portfolio</h2>
-            </div>
-        </div>
-        <div class="row text-center">
-            {% if categories %}
-                {% for category in categories %}
-                <div class="col-md-3 mb-3">
-                    <div class="text-container">
-                        <img src="{{category.category_photo.url}}" alt="" class="mb-3 img-fluid homepage-img">
-                        <div class="centered">
-                            <h5><a href="{{ category.slug }}">{{ category.name }}</a></h5>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-                <div class="col-md-12">
-                    <p>No Categories Available</p>
-                </div>
-            {% endif %}
-        </div>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h2 class="py-5">Portfolio</h2>
+      </div>
     </div>
+    <div class="row text-center portfolio-wrapper">
+      {% if categories %} {% for category in categories %}
+      <div class="col mb-3">
+        <div class="text-container">
+          <img
+            src="{{category.category_photo.url}}"
+            alt=""
+            class="mb-3 img-fluid homepage-img"
+          />
+          <div class="centered">
+            <h5><a href="{{ category.slug }}">{{ category.name }}</a></h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <div class="col-md-12">
+        <p>No Categories Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
 </section>
 {% endblock %}
