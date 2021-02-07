@@ -245,6 +245,10 @@ h2:after {
   margin: 0 auto;
 }
 
+#main-footer a {
+  color: rgb(255, 1, 1);
+}
+
 @media only screen and (min-width: 768px) {
   .service {
     margin: 3rem 0;
